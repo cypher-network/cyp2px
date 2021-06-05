@@ -39,6 +39,7 @@ Definitions:
 
 The ideal chain is a chain with no forks. Let 0 be the chain's first block with height 0 and 5 be the chain's last accepted block with height 5. In example 01, the chain length is 6:
 
+
 ```
 ------------
   example 01
@@ -47,9 +48,11 @@ The ideal chain is a chain with no forks. Let 0 be the chain's first block with 
 ------------
 ```
 
+
 ## Fork creation time
 
 When distributed nodes synchronize their local chains with the rest of the network, this may lead to a fork. In example 02 there exist two branches where the block with height 4 is the fork root:
+
 
 ```
 ------------
@@ -60,6 +63,7 @@ When distributed nodes synchronize their local chains with the rest of the netwo
 ------------
 ```
 
+
 The node uses `Rule 1` to decide which is the currently accepted chain.
 
 **Rule 1** Fork branches with the shortest `Fork creation time` for the first `Minimum Fork length` blocks become the selected chain.
@@ -67,6 +71,7 @@ The node uses `Rule 1` to decide which is the currently accepted chain.
 We assume a `Minimum fork length` of 4 in this document. According to `Rule 1, fork branch 1 is the currently selected chain in example 02, with a `Fork creation time` of 17 seconds.
 
 This applies to forks of forks as well. In example 03 there is a second fork, originating from branch 2, block height 6. Branch 3 is the currently selected chain in that example, given the shortest `Fork creation time` of 16 seconds and a fork length of 4.
+
 
 ```
 ------------
@@ -78,6 +83,7 @@ This applies to forks of forks as well. In example 03 there is a second fork, or
 ------------
 ```
 
+
 ## Minimum Fork lengh
 
 To prevent `Rule 1` from preventing any new blocks to become part of the selected chain, `Rule 2` defines the consensus for forks with a length smaller than `Minimum Fork length`:
@@ -85,6 +91,7 @@ To prevent `Rule 1` from preventing any new blocks to become part of the selecte
 **Rule 2** The longest fork branch with a length smaller than `Minimum Fork length` becomes the selected chain.
 
 In example 04, both branches have a length smaller than 4. Therefore, branch 1 is the currently selected chain due to its length:
+
 
 ```
 ------------
@@ -95,7 +102,9 @@ In example 04, both branches have a length smaller than 4. Therefore, branch 1 i
 ------------
 ```
 
+
 This applies to more complex fork structures as well. In example 05, branch 2 is the selected chain:
+
 
 ```
 ------------
@@ -108,9 +117,11 @@ This applies to more complex fork structures as well. In example 05, branch 2 is
 ------------
 ```
 
+
 ## Pseudo algorithm
 
 Both rules are applied starting from block 0, up to the end of the chain. Example 06 illustrates a situation where both rules need to be applied several times:
+
 
 ```
 ------------
@@ -122,6 +133,7 @@ Both rules are applied starting from block 0, up to the end of the chain. Exampl
     4)                                                     \-- 10 -- 11       (18s)
 ------------
 ```
+
 
 The evaluation is performed in the following order:
 
@@ -157,6 +169,7 @@ The evaluation is performed in the following order:
 
 A few moments later, the node has received some updates from the network and comes to the collection of blocks as depicted in example 7:
 
+
 ```
 ------------
   example 07
@@ -167,6 +180,7 @@ A few moments later, the node has received some updates from the network and com
     4)                                                     \-- 10 -- 11       (18s)
 ------------
 ```
+
 
 The evaluation is performed in the following order:
 
