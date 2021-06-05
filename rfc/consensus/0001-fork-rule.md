@@ -163,9 +163,6 @@ The evaluation is performed in the following order:
 
 7. No more forks found, branch 3 is the selected chain with `Chain height` 13 (blocks 0 to 12).
 
-------------
-```
-
 
 A few moments later, the node has received some updates from the network and comes to the collection of blocks as depicted in example 7:
 
