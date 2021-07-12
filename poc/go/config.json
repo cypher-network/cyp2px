@@ -1,0 +1,7 @@
+{
+    "node": {
+        "enablePlugins": [
+          "P2PDiscovery"
+        ]
+    }
+}
