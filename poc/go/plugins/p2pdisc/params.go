@@ -27,7 +27,7 @@ var params = &node.PluginParams{
 			fs := flag.NewFlagSet("", flag.ContinueOnError)
 			fs.Duration(CfgP2PDiscAdvertiseInterval, 30*time.Second, "the interval at which the node advertises itself on the DHT for peer discovery")
 			fs.Int(CfgP2PDiscMaxDiscoveredPeerConns, 4, "the max. amount of peers to be connected to which were discovered via the DHT rendezvous")
-			fs.String(CfgP2PDiscRendezvousPoint, "between-two-vertices", "the rendezvous string for advertising on the DHT that the node wants to peer with others")
+			fs.String(CfgP2PDiscRendezvousPoint, "cyp2px-rendezvous", "the rendezvous string for advertising on the DHT that the node wants to peer with others")
 			fs.Duration(CfgP2PDiscRoutingTableRefreshPeriod, 60*time.Second, "the routing table refresh period")
 			return fs
 		}(),

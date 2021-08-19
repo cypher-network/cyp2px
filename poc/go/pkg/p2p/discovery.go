@@ -19,7 +19,7 @@ import (
 )
 
 const (
-	defaultRendevousPoint            = "between-two-vertices"
+	defaultRendevousPoint            = "cyp2px-rendezvous"
 	defaultAdvertiseInterval         = 30 * time.Second
 	defaultRoutingTableRefreshPeriod = 1 * time.Minute
 	defaultMaxDiscoveredPeers        = 4
