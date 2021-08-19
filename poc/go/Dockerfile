@@ -6,10 +6,8 @@ WORKDIR /app
 
 COPY . ./
 
+RUN go mod tidy
 RUN go mod download
-
-COPY *.go ./
-
 RUN go build -o bin/cyp2px
 
 CMD [ "./bin/cyp2px" ]
