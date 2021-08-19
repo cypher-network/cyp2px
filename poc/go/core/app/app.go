@@ -17,10 +17,10 @@ import (
 
 var (
 	// Name of the app.
-	Name = "HORNET"
+	Name = "CYP2PX"
 
 	// Version of the app.
-	Version = "1.0.4"
+	Version = "0.0.1"
 )
 
 var (
