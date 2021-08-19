@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/gohornet/hornet/core/app"
 	"github.com/gohornet/hornet/pkg/node"
 
+	"tangrams.io/cyp2px/core/app"
 	"tangrams.io/cyp2px/core/p2p"
 	"tangrams.io/cyp2px/plugins/p2pdisc"
 )
